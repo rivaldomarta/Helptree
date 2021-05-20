@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="treendfo">e-Treendfo</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="go_chat">Ke Chat</string>
+    <string name="camera_act">Ambil Gambar</string>
+    <string name="title">HelpTree</string>
+    <string name="Btn_back">kembali</string>
+    <string name="camera_caption">Berdasarkan Gambar yang diambil tumbuhan anda terindikasi :</string>
+    <string name="disease_name">Nama Penyakit</string>
+    <string name="description">Deskripsi</string>
+    <string name="Btn_Solution">Temukan Solusi</string>
+    <string name="resImage">ImageResult</string>
+    <string name="line">line</string>
+    <string name="bt_reset">Reset</string>
+    <string name="bt_predictimg">Predict</string>
+    <string name="tvpred">Nama Penyakit</string>
+</resources>
