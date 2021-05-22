@@ -11,4 +11,6 @@
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#151515</color>
     <color name="colorAccent">#FF7043</color>
+    <color name="hijau_font">#82b385</color>
+    <color name="hijau_bar">#C8DEC5</color>
 </resources>

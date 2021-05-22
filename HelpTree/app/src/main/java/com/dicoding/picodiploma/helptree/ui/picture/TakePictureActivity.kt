@@ -7,21 +7,20 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.picodiploma.helptree.R
 import com.dicoding.picodiploma.helptree.databinding.ActivityTakePictureBinding
-import com.dicoding.picodiploma.helptree.ml.AlexQuant
+import com.dicoding.picodiploma.helptree.ml.CNNBiasa2
 import com.dicoding.picodiploma.helptree.ui.chatbot.ChatbotActivity
+import com.dicoding.picodiploma.helptree.ui.information.InfoActivity
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.common.TensorProcessor
 import org.tensorflow.lite.support.common.ops.NormalizeOp
 import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
-import java.io.IOException
 
 class TakePictureActivity : AppCompatActivity() {
 
@@ -48,31 +47,45 @@ class TakePictureActivity : AppCompatActivity() {
         val select = activityTakePictureBinding?.btnSelect
         val reset = activityTakePictureBinding?.btnReset
         val solusi = activityTakePictureBinding?.btnSolusi
+        val info = activityTakePictureBinding?.btnInfoDetail
 
-        solusi?.setOnClickListener(View.OnClickListener{
-            val intent = Intent(this, ChatbotActivity::class.java)
-            intent.putExtra("DISEASE_NAME", nameDisease)
+        info?.setOnClickListener {
+            val intent = Intent(this, InfoActivity::class.java)
             startActivity(intent)
+        }
 
-        })
+        solusi?.setOnClickListener {
+            if (activityTakePictureBinding?.tvPrediction?.text != "Nama Penyakit") {
+                val intent = Intent(this, ChatbotActivity::class.java)
+                intent.putExtra("DISEASE_NAME", nameDisease)
+                startActivity(intent)
+            } else {
+                Toast.makeText(
+                    applicationContext,
+                    "Silahkan Pilih Gambar Terlebih dahulu",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
 
-        reset?.setOnClickListener(View.OnClickListener {
+        reset?.setOnClickListener {
             activityTakePictureBinding?.tvPrediction?.text = getString(R.string.tvpred)
             activityTakePictureBinding?.resultImg?.setImageResource(0)
-        })
+        }
 
-        select?.setOnClickListener(View.OnClickListener {
+        select?.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
 
             startActivityForResult(intent, 100)
-        })
+        }
 
         val predict = activityTakePictureBinding?.btnPredict
         val tvPredict = activityTakePictureBinding?.tvPrediction
         val tvDetail = activityTakePictureBinding?.tvDetails
-        predict?.setOnClickListener(View.OnClickListener {
-            if(activityTakePictureBinding?.resultImg?.drawable != null){
+
+        predict?.setOnClickListener {
+            if (activityTakePictureBinding?.resultImg?.drawable != null) {
                 val imageProcessor = ImageProcessor.Builder()
                     .add(ResizeOp(224, 224, ResizeOp.ResizeMethod.BILINEAR))
                     .build()
@@ -85,7 +98,7 @@ class TakePictureActivity : AppCompatActivity() {
                 val probabilityProcessor =
                     TensorProcessor.Builder().add(NormalizeOp(0f, 255f)).build()
 
-                val model = AlexQuant.newInstance(this@TakePictureActivity)
+                val model = CNNBiasa2.newInstance(this@TakePictureActivity)
                 val outputs =
                     model.process(probabilityProcessor.process(tImage.tensorBuffer))
                 val outputBuffer = outputs.outputFeature0AsTensorBuffer
@@ -95,10 +108,14 @@ class TakePictureActivity : AppCompatActivity() {
                 tvDetail?.text = diseaseDetails[max]
                 nameDisease = diseaselist[max]
                 model.close()
-            }else{
-                Toast. makeText(applicationContext,"Silahkan Pilih Gambar Terlebih dahulu", Toast. LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    applicationContext,
+                    "Silahkan Pilih Gambar Terlebih dahulu",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-        })
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

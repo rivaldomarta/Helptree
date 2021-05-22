@@ -12,15 +12,20 @@
         <activity
             android:name=".ui.chatbot.ChatbotActivity"
             android:label="@string/title_activity_chatbot"
-            android:theme="@style/ChatbotTheme"></activity>
+            android:theme="@style/ChatbotTheme" />
         <activity android:name=".ui.picture.TakePictureActivity" />
-        <activity android:name=".ui.home.HomeActivity">
+        <activity android:name=".ui.home.WebViewAct" />
+        <activity android:name=".ui.information.InfoActivity" />
+        <activity
+            android:name=".ui.home.SplashScreen"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.home.HomeActivity"/>
     </application>
 
 </manifest>
