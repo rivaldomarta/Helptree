@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tvpred">Nama Penyakit</string>
+    <string name="placeholder_detail">Pilih foto klik SELECTlalu klik PREDICTuntuk mendapatkan hasil prediksi</string>
 </resources>

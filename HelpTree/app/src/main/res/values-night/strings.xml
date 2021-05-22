@@ -15,4 +15,5 @@
     <string name="bt_reset">Reset</string>
     <string name="bt_predictimg">Predict</string>
     <string name="tvpred">Nama Penyakit</string>
+    <string name="placeholder_detail">Pilih foto klik SELECTlalu klik PREDICTuntuk mendapatkan hasil prediksi</string>
 </resources>

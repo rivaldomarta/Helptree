@@ -33,12 +33,34 @@ class ChatbotActivity : AppCompatActivity() {
         _activityChatbotBinding = ActivityChatbotBinding.inflate(layoutInflater)
         setContentView(activityChatbotBinding?.root)
 
+        val intent = intent
+        val nameDisease = intent.getStringExtra("DISEASE_NAME")
+
+
+
         recyclerView()
 
         clickEvent()
 
-        val random = (0..2).random()
-        customMessage("Halo, saat ini kamu sudah terhubung dengan ${botList[random]}, ada yang bisa saya bantu ? ")
+        if (nameDisease != null) {
+            if(nameDisease.isNotEmpty()){
+                sendMessageDisease(nameDisease)
+            }
+        }else{
+            val random = (0..2).random()
+            customMessage("Halo, saat ini kamu sudah terhubung dengan ${botList[random]}, ada yang bisa saya bantu ? ")
+        }
+    }
+
+    private fun sendMessageDisease(nameDisease: String) {
+        val message = nameDisease.toString()
+        val timestamp = Time.timeStamp()
+        if(message.isNotEmpty()){
+            activityChatbotBinding?.etMessage?.setText("")
+            adapter.insertMessage(Message(message, SEND_ID, timestamp))
+            activityChatbotBinding?.rvMessages?.scrollToPosition(adapter.itemCount-1)
+            botResponse(message)
+        }
     }
 
     private fun clickEvent() {
@@ -76,7 +98,6 @@ class ChatbotActivity : AppCompatActivity() {
     private fun sendMessage(){
         val message = activityChatbotBinding?.etMessage?.text.toString()
         val timestamp = Time.timeStamp()
-
         if(message.isNotEmpty()){
             activityChatbotBinding?.etMessage?.setText("")
             adapter.insertMessage(Message(message, SEND_ID, timestamp))
@@ -84,7 +105,6 @@ class ChatbotActivity : AppCompatActivity() {
 
             botResponse(message)
         }
-
     }
 
     private fun botResponse(message: String) {

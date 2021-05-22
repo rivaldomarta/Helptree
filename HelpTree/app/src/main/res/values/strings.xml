@@ -30,4 +30,5 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="tvpred">Nama Penyakit</string>
+    <string name="placeholder_detail">Pilih foto klik SELECTlalu klik PREDICTuntuk mendapatkan hasil prediksi</string>
 </resources>

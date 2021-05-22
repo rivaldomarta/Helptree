@@ -50,7 +50,7 @@
         android:fontFamily="@font/pathwaygothicone"
         android:text="@string/camera_caption"
         android:textColor="#000000"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
@@ -86,11 +86,10 @@
             android:id="@+id/tv_details"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="3dp"
+            android:text='Pilih foto klik "SELECT" lalu klik "predic" untuk mendapatkan hasil prediksi'
             android:justificationMode="inter_word"
-            android:padding="8dp"
-            android:text="@string/placeholder_detail"
-            android:textSize="14sp"
-            tools:ignore="UnusedAttribute" />
+            android:textSize="14sp" />
     </androidx.cardview.widget.CardView>
 
     <Button
