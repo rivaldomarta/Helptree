@@ -48,10 +48,11 @@
         android:layout_below="@+id/dark_divider"
         tools:itemCount="20"
         tools:listitem="@layout/message_items" />
+
     <View
+        android:id="@+id/dark_divider"
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="#42A5F5"
-        android:id="@+id/dark_divider"/>
+        android:background="#0042A5F5" />
 
 </RelativeLayout>

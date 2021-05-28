@@ -19,12 +19,12 @@
     <string name="icon">icon</string>
 
     <string-array name="nama_dev">
-        <item>Muhammad Ilhamsyah</item>
-        <item>Meutia Khairiyah</item>
-        <item>Irfan Rahadi K.</item>
-        <item>Rivaldo</item>
-        <item>Aqilarik N.R.</item>
-        <item>Annisa Nurjanah</item>
+        <item>M. Ilhamsyah (A3142813)</item>
+        <item>Meutia Khairiyah (A1281624)</item>
+        <item>Irfan Rahadi K. (M0101130)</item>
+        <item>Rivaldo Marta (M0101131)</item>
+        <item>Aqilarik N.R (C2192108)</item>
+        <item>Annisa Nurjanah (C3142812)</item>
     </string-array>
     <string-array name="path_dev">
         <item>Mobile Development</item>
@@ -38,7 +38,7 @@
         <item>@drawable/ailham</item>
         <item>@drawable/ameu</item>
         <item>@drawable/airfan</item>
-        <item>@drawable/tayo</item>
+        <item>@drawable/fotovaldo</item>
         <item>@drawable/aqil</item>
         <item>@drawable/annisa</item>
     </string-array>

@@ -18,27 +18,6 @@ object BotResponse {
         val random = (0..2).random()
         val message = _message.toLowerCase(Locale.ROOT)
         return when{
-//            //hello
-//            message.contains("halo")->{
-//                when(random){
-//                    0-> "Hai Apa kabarmu ?"
-//                    1-> "Hai, dengan HelpTreeBot disini"
-//                    2-> "Haii..."
-//                    else -> "error"
-//                }
-//            }
-//
-//            //Bagaimana Kabarmu
-//            message.contains("apa kabar")->{
-//                when(random){
-//                    0-> "Aku sangat baik, terima kasih"
-//                    1-> "Aku sehat, terima kasih"
-//                    2-> "Baik, bagaimana denganmu ?"
-//                    else -> "error"
-//                }
-//            }
-
-            //baik
             message.contains("aku baik")->{
                 when(random){
                     0-> "Syukurlah..."
@@ -66,6 +45,13 @@ object BotResponse {
                 "Aku sudah melempar Koinnya dan hasilnya adalah $result"
             }
 
+            message.contains("Error C01404") ->{
+                val rand= (0..1).random()
+                val result = if(rand == 0)"Kami sedang dalam perbaikan" else "Kami akan segera hadir kembali maaf"
+
+                "Oops... $result"
+            }
+
             message.contains("time") && message.contains("?") ->{
                 Time.timeStamp()
             }
@@ -80,18 +66,6 @@ object BotResponse {
 
             else ->{
                 BOT_HELPTREE
-//                val respon = ResponseHelper()
-//                respon.getResponseFromApi(message)
-//                respon.getHasil()
-////                getResponseFromApi(message)
-////                akhir
-////                akhir
-////                when(random){
-////                    0-> "Aku tidak mengerti.."
-////                    1-> "Wah apa artinya itu ?..."
-////                    2-> "Aku masih perlu belajar lagi :("
-////                    else -> "error"
-////                }
             }
         }
     }

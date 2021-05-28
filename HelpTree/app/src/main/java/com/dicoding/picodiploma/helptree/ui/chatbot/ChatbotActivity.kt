@@ -33,10 +33,9 @@ class ChatbotActivity : AppCompatActivity() {
         _activityChatbotBinding = ActivityChatbotBinding.inflate(layoutInflater)
         setContentView(activityChatbotBinding?.root)
 
+        supportActionBar?.title = "HelpTree Bot"
         val intent = intent
         val nameDisease = intent.getStringExtra("DISEASE_NAME")
-
-
 
         recyclerView()
 
@@ -126,23 +125,24 @@ class ChatbotActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                     BOT_HELPTREE->{
-                        val url = "https://arik.my.id/helptree/bot?query=$message"
+                        val url = "http://35.192.216.146/chatbot?query=$message"
                         val client = AsyncHttpClient()
                         client.get(url, object: AsyncHttpResponseHandler(){
                             override fun onSuccess(statusCode: Int, headers: Array<Header>, responseBody: ByteArray) {
                                 try {
                                     val result = String(responseBody)
                                     val responseObject = JSONObject(result)
-                                    var hasil = responseObject.getString("response")
-
-                                    adapter.insertMessage(Message(hasil.toString(), RECEIVE_ID, timestamp))
-                                    activityChatbotBinding?.rvMessages?.scrollToPosition(adapter.itemCount-1)
+                                    val hasil = responseObject.getString("bot_response")
+                                        adapter.insertMessage(Message(hasil.toString(), RECEIVE_ID, timestamp))
+                                        activityChatbotBinding?.rvMessages?.scrollToPosition(adapter.itemCount-1)
                                 }catch (e: java.lang.Exception){
                                     Log.d("Exception", e.message.toString())
                                 }
                             }
                             override fun onFailure(statusCode: Int, headers: Array<Header>, responseBody: ByteArray, error: Throwable) {
                                 Log.d("onFailure", error.message.toString())
+                                botResponse("Error C01404")
+                                activityChatbotBinding?.rvMessages?.scrollToPosition(adapter.itemCount-1)
                             }
                         })
                     }
