@@ -1,1 +1,1 @@
-# Helptree
+Indonesia is an agricultural country, and every year farmers are always faced with diseases in plants that cause crop failure and then suffer losses. Besides, there are many more problems about this such as plant lovers. so we are moved to help farmers in overcoming disease attacks in plants using machine learning so that they do not suffer more losses. Therefore our goal is How to help farmers reduce the harmful effects of disease on crops.
