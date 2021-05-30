@@ -13,3 +13,13 @@
   <li> C3142812 - Annisa Nurjanah </li>
   <li> M0101130 - Irfan Rahadi Kurnianto</li>
   <li> M0101131 - Rivaldo Marta </ul>
+
+<p> The learning path that we use: </p>
+<table >
+  <tr>
+    <td> <img src = "https://user-images.githubusercontent.com/72623174/120104885-e52f7780-c180-11eb-9d74-433fb4a1fe80.png"> </td>
+    <td> <img src ="https://user-images.githubusercontent.com/72623174/120104917-009a8280-c181-11eb-95e4-4dcc816d3b20.png"></td>
+    <td> <img src= "https://user-images.githubusercontent.com/72623174/120104938-10b26200-c181-11eb-9a31-b3d031915a48.png"></td>
+  </tr>
+  </table>
+
