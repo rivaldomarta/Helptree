@@ -2,6 +2,7 @@
 
 
 <h1> Acc and Val Acc </h1>
+
 ![1](https://user-images.githubusercontent.com/20537982/120321590-b1358d00-c30d-11eb-8b8d-acc2cab1b315.jpeg)
 
 
