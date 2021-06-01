@@ -7,6 +7,6 @@
 
 
 
-<h2>Loss and Val Loss </h2>
+<h2 align="center">Loss and Val Loss </h2>
 
 ![2](https://user-images.githubusercontent.com/20537982/120321647-bf83a900-c30d-11eb-8c2c-297d5f40a6c2.jpeg)
