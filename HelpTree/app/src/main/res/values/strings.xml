@@ -18,19 +18,16 @@
     <string name="line">line</string>
     <string name="bt_reset">Reset</string>
     <string name="bt_info">Info</string>
-    <string name="bt_selectimg">Select</string>
-    <string name="bt_predictimg">Predict</string>
+    <string name="bt_selectimg">Pilih</string>
+    <string name="bt_predictimg">Prediksi</string>
     <string name="title_activity_chatbot">ChatbotActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="next">Selanjutnya</string>
+    <string name="previous">Sebelumnya</string>
     <string name="tvpred">Nama Penyakit</string>
-    <string name="placeholder_detail">Pilih foto klik SELECTlalu klik PREDICT untuk mendapatkan hasil prediksi</string>
+    <string name="placeholder_detail">Pilih foto klik PILIH,\n lalu klik PREDIKSI untuk mendapatkan hasil prediksi</string>
 
 
     <string name="information">Informasi</string>
@@ -40,13 +37,15 @@
         deteksi gambar dan konsultasi menggunakan chatbot.\n \n
 
         📷 Cara menggunakan deteksi gambar dengan memasukkan gambar dari Album/Gallery ke dalam aplikasi.
-        \n 💬 Utuk konsultasi dapat klik ikon konsultasi dan mari berbagi cerita mu bersama Tria
+        \n 💬 Utuk konsultasi dapat klik ikon konsultasi dan mari berbagi cerita mu bersama Treea
     </string>
     <string name="developer">Tentang Developer</string>
     <string name="about">Tentang Aplikasi</string>
     <string name="photo_developer">Photo Developer</string>
     <string name="aboutDevelop">tentangDeveloper</string>
     <string name="icon">icon</string>
+    <string name="type_a_message">Ketikkan Pesan Anda…</string>
+    <string name="send">Kirim</string>
 
     <string-array name="nama_dev">
         <item>M. Ilhamsyah (A3142813)</item>
